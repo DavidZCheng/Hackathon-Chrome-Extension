@@ -3,12 +3,13 @@
 //create a function that converts the font of the page to comic sans
 
 function toComicSans() {
-  chrome.tabs.insertCSS({file:'style.css'});
-  const divs = document.getElementsByTagName('div');
-  for (const div of divs) {
-    document.body.style.fontFamily = 'Comic Sans MS';
-    divs.style.fontFamily = 'Comic Sans MS';
-  }
+  const nodeList = document.querySelectorAll('p');
+  const nodeListToArray = Array.apply(null, nodeList); 
+    // document.body.style.fontFamily = 'Comic Sans MS';
+    nodeListToArray.forEach((el) => {
+      el.style.fontFamily = 'Comic Sans MS';
+    })
+  
   document.body.style.backgroundColor = 'red';
 }
 
