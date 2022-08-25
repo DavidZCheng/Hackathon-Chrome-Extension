@@ -4,6 +4,12 @@
 
 function toComicSans() {
   chrome.tabs.insertCSS({file:'style.css'});
+  const divs = document.getElementsByTagName('div');
+  for (const div of divs) {
+    document.body.style.fontFamily = 'Comic Sans MS';
+    divs.style.fontFamily = 'Comic Sans MS';
+  }
+  document.body.style.backgroundColor = 'red';
 }
 
 chrome.action.onClicked.addListener((tab) => {
